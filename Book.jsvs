@@ -1,0 +1,8 @@
+class Book {
+    String title;
+    String author;
+    int pages;
+    double price;
+    String publisher;
+    int edition;
+}
