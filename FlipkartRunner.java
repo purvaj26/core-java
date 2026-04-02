@@ -1,16 +1,36 @@
-class FlipkartRunner{
+class FlipkartRunner {
 
-public static void main(String[] args){
+  public static void main(String[] arg) {
 
-System.out.println("------First Time Method Call------");
+    Flipkart Flipkart = new Flipkart();
 
-String order1=Flipkart.validateAndBuy(9876543210L,"Laptop","Bangalore","UPI","Ravi");
-System.out.println(order1);
+    boolean login = Flipkart.login("Purvaj", "MS@43");
+    System.out.println(login);
+    
+	
+	
+    String result = Flipkart.login(74113242, 0000);
+    System.out.println(result);
+	
+	
+    
+    String msg = Flipkart.search("smartwatch");
+    System.out.println(msg);
+	
+    msg = Flipkart.search("smartwatch", "Boult");
+    System.out.println(msg);
+	
+    
+    msg = Flipkart.search("smartwatch");
+    System.out.println(msg);
 
-System.out.println("------Second Time Method Call------");
 
-String order2=Flipkart.validateAndBuy(9876543211L,"Headphones","Mysore","Card","Kiran");
-System.out.println(order2);
+    msg = Flipkart.search("smartwatch", "Boult", 7000, "black");
+    System.out.println(msg);
 
-}
+    msg = Flipkart.search("smartwatch", "Boult", 7000, "black", "2GB");
+    System.out.println(msg);
+	
+	
+  }
 }

@@ -1,16 +1,26 @@
-class AmazonRunner{
+class AmazonRunner {
 
-public static void main(String[] args){
+  public static void main(String[] args) {
 
-System.out.println("------First Time Method Call------");
+    Amazon amazon = new Amazon();
 
-String order1=Amazon.validateAndOrder(9876543210L,"Laptop","Bangalore","UPI","Rahul");
-System.out.println(order1);
+    boolean loginResult = amazon.login("Purvaj MS", "purv@123");
+    System.out.println("Login status: " + loginResult);
 
-System.out.println("------Second Time Method Call------");
+    String search1 = amazon.search("Shoes");
+    System.out.println(search1);
 
-String order2=Amazon.validateAndOrder(9876543211L,"Mobile","Mysore","Card","Arjun");
-System.out.println(order2);
+    String search2 = amazon.search("Shoes", "Nike");
+    System.out.println(search2);
 
-}
+    String search3 = amazon.search("Shoes", "Nike", 3000);
+    System.out.println(search3);
+
+    String search4 = amazon.search("Shoes", "Nike", 3000, "Black");
+    System.out.println(search4);
+
+    String search5 = amazon.search("Shoes", "Nike", 3000, "Black", "10");
+    System.out.println(search5);
+
+  }
 }

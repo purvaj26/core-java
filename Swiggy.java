@@ -1,55 +1,67 @@
-class Swiggy{
+class Swiggy {
+	
+	public boolean login(String userName,String psw){
+		System.out.println("invoking login using userName:"+userName+" and psw:"+psw);
 
-public static String validateAndOrder(long mobileNumber,String foodName,String restaurantName,String address,String userName){
+		String regUserName="Purvaj MS";
+        String regPsw="purv@123";
+        boolean isLogin=false;
 
-System.out.println("validateAndOrder method is started");
+        if(userName.equals(regUserName) && psw.equals(regPsw)){
+            isLogin=true;
+        }
 
-String orderStatus=null;
-
-if(mobileNumber!=0 && foodName!=null && restaurantName!=null && address!=null && userName!=null){
-
-    if(foodName.length()>3 && restaurantName.length()>3 && userName.length()>3){
-
-        orderStatus="Hello "+userName+" Your order "+foodName+" from "+restaurantName+" is placed successfully";
-
-    }else{
-
-        orderStatus="Please check the length of Food Name, Restaurant Name or User Name";
-
+        return isLogin;
     }
 
-}else{
+    public String login(long phnum,int otp){
+		System.out.println("invoking login using phone number:"+phnum+" otp:"+otp);
+		
+		long regPhnum=7411324231L;
+        int regOtp=1234;
+        String message;
+		
+		if(phnum==regPhnum && otp==regOtp){
+			message="Login Successful";
+        }else{
+            message="Login Failed";
+        }
 
-    orderStatus="Please enter the valid order details";
+        return message;
+    }
 
-}
+    public String search(String foodName){
+		System.out.println("invoking search foodName:"+foodName);
 
-System.out.println("validateAndOrder method is Ended");
+		String message="Food is available: "+foodName;
+        return message;
+    }
 
-return orderStatus;
+    public String search(String foodName,String restaurant){
+		System.out.println("invoking search foodName:"+foodName+" restaurant:"+restaurant);
 
-}
-public static boolean validateRegisterFields(long mobileNumber,String foodName,String pasw,String fullName,String userName)
-{
-	System.out.println("validateRegisterFields is started");
-	boolean isValidate=false;
-	if (mobileNumber!=0)
-	{
-		isValidate=true;
-	}
-	if(pasw!=null)
-	{
-		isValidate=true;
-	}
-	if(fullName!=null)
-	{
-		isValidate=true;
-	}
-	if(userName!=null)
-	{
-		isValidate=true;
-	}
-	System.out.println("validateRegisterFields is started");
-	return isValidate;
-}
+		String message="Food:"+foodName+" from "+restaurant+" is available";
+        return message;
+    }
+
+    public String search(String foodName,String restaurant,int price){
+        System.out.println("invoking search foodName:"+foodName+" restaurant:"+restaurant+" price:"+price);
+
+        String message="Food:"+foodName+" under price:"+price+" is available";
+        return message;
+    }
+
+    public String search(String foodName,String restaurant,int price,String type){
+        System.out.println("invoking search foodName:"+foodName+" restaurant:"+restaurant+" price:"+price+" type:"+type);
+
+        String message="Food:"+foodName+" type:"+type+" is available";
+        return message;
+    }
+
+    public String search(String foodName,String restaurant,int price,String type,String size){
+        System.out.println("invoking search foodName:"+foodName+" restaurant:"+restaurant+" price:"+price+" type:"+type+" size:"+size);
+
+        String message="Food:"+foodName+" size:"+size+" is available";
+        return message;
+    }
 }

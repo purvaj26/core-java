@@ -1,34 +1,68 @@
-class Amazon{
+class Amazon {
+	
+  public boolean login(String userName, String psw) {
+    System.out.println("invoking login using userName:" + userName + " and psw:" + psw);
 
-//return type PD/Non PD
-public static String validateAndOrder(long mobileNumber,String productName,String address,String paymentType,String userName){
+    String reguserName = "Purvaj MS";
+    String regpsw = "purv@123";
+    boolean isLogin = false;
 
-System.out.println("validateAndOrder method is started");
-
-String orderStatus=null;
-
-if(mobileNumber!=0 && productName!=null && address!=null && paymentType!=null && userName!=null){
-
-    if(productName.length()>3 && address.length()>5 && userName.length()>3){
-
-        orderStatus="Thank you "+userName+" Your order for "+productName+" is placed successfully";
-
-    }else{
-
-        orderStatus="Please check the length of Product Name, Address or User Name";
-
+    if (userName.equals(reguserName) && psw.equals(regpsw)) {
+      isLogin = true;
     }
 
-}else{
+    return isLogin;
+  }
 
-    orderStatus="Please enter the valid data";
+  public String login(long phnum, int otp) {
+    System.out.println("invoking login using phone number:" + phnum + " otp:" + otp);
 
-}
+    long regphnum = 7411324231L;
+    int regotp = 1234;
+    String message;
 
-System.out.println("validateAndOrder method is Ended");
+    if (phnum == regphnum && otp == regotp) {
+      message = "Login Successful";
+    } else {
+      message = "Login Failed";
+    }
 
-return orderStatus;
+    return message;
+  }
+  
+  public String search(String productName) {
+    System.out.println("invoking search productName:" + productName);
 
-}
+    String message = "searched product Name is available: " + productName;
+    return message;
+  }
+
+  public String search(String productName, String brand) {
+    System.out.println("invoking search productName:" + productName + " and brand:" + brand);
+
+    String message = "searched product Name:" + productName + " brand:" + brand + " is available";
+    return message;
+  }
+
+  public String search(String productName, String brand, int price) {
+    System.out.println("invoking search productName:" + productName + " brand:" + brand + " price:" + price);
+
+    String message = "Product:" + productName + " brand:" + brand + " under price:" + price + " is available";
+    return message;
+  }
+
+  public String search(String productName, String brand, int price, String color) {
+    System.out.println("invoking search productName:" + productName + " brand:" + brand + " price:" + price + " color:" + color);
+
+    String message = "Product:" + productName + " " + color + " color is available";
+    return message;
+  }
+
+  public String search(String productName, String brand, int price, String color, String size) {
+    System.out.println("invoking search productName:" + productName + " brand:" + brand + " price:" + price + " color:" + color + " size:" + size);
+
+    String message = "Product:" + productName + " size:" + size + " is available";
+    return message;
+  }
 
 }
