@@ -1,26 +1,65 @@
-class Mobile
-{
-	static float mobilePrice=15000.6f;
-	static String mobileBrand="oppo A16k";
-	static int manufacturerYear=2019;
-	
-   public static void getMobileDetails()
-   {
-	   System.out.println("Mobile price:"+mobilePrice);
-   }
-       public static String getMobileBrand()
-	   {
-           System.out.println("Mobile Brand:"+mobileBrand);
-		   return  "mobileBrand";
-	   }		   
-	      public static String getMobileManufacturer(String manufacturer)
-		  {
-			  System.out.println("Mobile Manufacturer:"+manufacturer);
-			  return "manufacturer";
-		  }
-		     public static void  getMobileManufacturingYear()
-			 {
-				 System.out.println("Mobile Manufacturing Year:"+manufacturerYear);
-			 }
-		
+class Mobile {
+    String brand;
+    String model;
+    int storage;
+    int ram;
+    double price;
+    String color;
+    boolean has5G;
+    String os;
+    int batteryCapacity;
+    String ownerName;
+
+    static String category = "Electronics";
+    static String type = "Smart Device";
+
+    public boolean powerOn(boolean status) {
+        System.out.println("Mobile Power On: " + status);
+        return status;
+    }
+
+    public boolean powerOff(boolean status) {
+        System.out.println("Mobile Power Off: " + status);
+        return status;
+    }
+
+    public String makeCall(String number) {
+        System.out.println("Calling: " + number);
+        return number;
+    }
+
+    public String sendMessage(String msg) {
+        System.out.println("Message Sent: " + msg);
+        return msg;
+    }
+
+    public boolean connectInternet(boolean status) {
+        System.out.println("Internet Connected: " + status);
+        return status;
+    }
+
+    public int checkBattery(int percent) {
+        System.out.println("Battery: " + percent + "%");
+        return percent;
+    }
+
+    public String openApp(String app) {
+        System.out.println("App Opened: " + app);
+        return app;
+    }
+
+    public boolean takePhoto(boolean status) {
+        System.out.println("Photo Taken: " + status);
+        return status;
+    }
+
+    public String playMusic(String song) {
+        System.out.println("Playing Song: " + song);
+        return song;
+    }
+
+    public boolean lockPhone(boolean status) {
+        System.out.println("Phone Locked: " + status);
+        return status;
+    }
 }
